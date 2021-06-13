@@ -1,0 +1,46 @@
+@import "izitoast/dist/css/iziToast.min.css";
+@import "sweetalert2/dist/sweetalert2.min.css";
+@import "datatables.net-bs4/css/dataTables.bootstrap4.min.css";
+
+// this application custom css
+
+.capitalize-first-word:first-letter {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+label.is-invalid {
+  font-style: italic;
+  color: red;
+}
+
+// for JSON pretty formatting
+pre {
+  outline: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+}
+
+.json-string {
+  color: green;
+}
+
+.json-number {
+  color: darkorange;
+}
+
+.json-boolean {
+  color: blue;
+}
+
+.json-null {
+  color: magenta;
+}
+
+.json-key {
+  color: red;
+}
+
+.zoom-in {
+  cursor: nesw-resize;
+}

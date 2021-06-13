@@ -1,0 +1,7 @@
+{
+  "ruby.rubocop.configFilePath": "/home/tiago/dev/rails/templates/rails6_coreui3/files/.rubocop.yml",
+  "ruby.rubocop.useBundler": true,
+  "ruby.rubocop.executePath": "/home/tiago/.rbenv/shims/",
+  "jshint.packageManager": "yarn",
+  "ruby.rubocop.suppressRubocopWarnings": true
+}

@@ -1,0 +1,3 @@
+web: bundle exec puma -p 3000 -C config/puma.rb
+webpacker: ./bin/webpack-dev-server
+log: tail -f ./log/development.log

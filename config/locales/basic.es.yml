@@ -1,0 +1,12 @@
+---
+es:
+  errors:
+    messages:
+      accepted: debe ser aceptado
+  helpers:
+    select:
+      prompt: Por favor seleccione
+    submit:
+      create: Crear %{model}
+      submit: Guardar %{model}
+      update: Actualizar %{model}

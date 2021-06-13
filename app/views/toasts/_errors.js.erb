@@ -1,0 +1,6 @@
+App.common_controller.toast(
+  "<%= t('errors.messages.not_saved', count: instance.errors.count) %>",
+  // eslint-disable-next-line quotes
+  '<%= instance.errors.messages.map {|k,v| t("attributes.#{k}") + ": " + v.first }.join("; ") %>',
+  "error"
+)

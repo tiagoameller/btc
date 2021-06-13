@@ -1,0 +1,19 @@
+---
+es:
+  controllers:
+    bad_params: Parámetros incorrectos
+    cannot_delete_used_fields: Campo ya utilizado no se puede borrar
+    create: Crear
+    created: "%{model_name} se ha creado con éxito"
+    destroyed: "%{model_name} se ha borrado con éxito"
+    edit: Modificar
+    index: Listado
+    new: Nuevo
+    no_current_company: No hay empresa seleccionada
+    no_records_found: No se encuentran registros con estas condiciones de búsqueda
+    not_found: No se encuentra %{model_name}
+    show: Ficha
+    update: Modificar
+    updated: "%{model_name} actualizado con éxito"
+    user_not_authorized: No está autorizado para esta acción
+    was_deleted: Posiblemente ha sido borrado por otro usuario

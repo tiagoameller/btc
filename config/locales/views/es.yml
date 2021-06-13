@@ -1,0 +1,135 @@
+---
+es:
+  actions:
+    create: creado
+    destroy: borrado
+    update: modificado
+  audit:
+    no_activity: Sin actividad
+    one: Evento
+    other: Eventos
+  bulk_status:
+    change: Cambiar
+    flash:
+      not_found: No se han encontrado días para Cambiar
+      success: Se han cambiado %{days} días a %{new_status}
+    new_status: Nuevo estado
+    title: Cambio masivo de estado
+  clipboard:
+    copy: Copiar
+  common:
+    account: Cuenta
+    all: Todos
+    are_you_sure: "¿Está seguro?"
+    back: Volver
+    buy_more_users: Comprar más usuarios
+    by: por
+    create: Crear
+    delete: Borrar
+    deleting: Borrando ...
+    edit: Modificar
+    home: Inicio
+    image: Imagen
+    images: Imágenes
+    login: Acceder
+    logout: Cerrar sesión
+    never: nunca
+    next: Siguiente
+    nil: Vacío
+    no_activity: Sin actividad
+    not_assigned: Sin asignar
+    not_defined: Sin definir
+    not_found: no encontrado
+    password: Contraseña
+    please_login: Por favor, inicie sesión
+    previous: Anterior
+    profile: Perfil
+    saving: Guardando ...
+    show: Ficha
+    signup: Registrarse
+    terms: Condiciones de uso
+    undefined: Sin definir
+    update: Actualizar
+    welcome: Página de inicio
+  cookies:
+    cookies: Cookies
+  errors:
+    dashboard:
+      update: Error actualizando la estadística
+  flash:
+    alert: Atención
+    error: "¡Error!"
+    notice: Información
+    success: Correcto
+  meta:
+    author: Menorca Zeros i Uns SL
+    contact:
+      country_name: España
+      locality: Maó
+      postal_code: 4035
+      region: Islas Baleares
+      street_address: Font i Vidal, 5
+    description: SaaS para lo que sea
+    site_name: myapp.com
+    title: myapp
+    url: https://myapp.com
+  passwords:
+    change: Cambia tu contraseña
+    confirm_new: Confirmar la nueva contraseña
+    forgot: "¿Olvidaste tu contraseña?"
+    min_length: mínimo %{count} caracteres
+    new: Nueva contraseña
+    reset: Cambiar mi contraseña
+    reset_hint: Si utilizas el email para entrar en la aplicación, introdúcelo aquí. En cambio, si utilizas tu nombre para acceder, deberás pedir al administrador de tu empresa que te defina una nueva contraseña.
+    try_login: Volver a probar mi vieja contraseña
+  pricing:
+    title: Plan de precios
+  privacy:
+    privacy: Privacidad
+  registrations:
+    edit:
+      hints:
+        current_username: Su nombre completo de usuario actual es %{loginname}
+        leave_it_blank: Dejar en blanco si no se va a cambiar
+        mandatory_email: La cuenta de correo es obligatoria para auditores y administradores
+        optional_email: La cuenta de correo es opcional para empleados
+        optional_phone: El número de teléfono es opcional
+        username: Entre un nombre corto para entrar en la aplicación. No indique el prefijo de la empresa
+        we_need_password: Se requiere contraseña actual para confirmar los cambios
+      placeholders:
+        confirm_passwod: Confirme la contraseña
+        current_password: Contraseña actual
+    new:
+      agree_to_terms: Estoy de acuerdo con las
+      register_new_user: Darse de alta como usuario
+  report:
+    date_range: Desde / Hasta Fecha
+    kind: Tipo
+    report: Informes
+    select: Seleccionar condiciones
+    submit: Generar
+  sessions:
+    new:
+      app_explanation: SaaS para lo que sea
+      ask_access: Solicitar acceso
+      email_or_loginname: Usuario o correo electrónico
+      forgot_password: "¿Contraseña olvidada?"
+      information: "¿Deseas cumplir con la normativa?"
+      know_more: "¡Quiero saber más!"
+      remember_me: Recordarme
+      signin: Entrar
+  signup:
+    become_a_member: Empieza a fichar
+    register: Dar de alta la empresa
+  tos:
+    tos: Términos de uso
+  user:
+    cannot_delete_default_admin: No se puede borrar el administrador por defecto
+    cannot_delete_user_with_punches: No se puede borrar un usuario que tenga fichajes
+    cannot_delete_yourself: No se puede borrar el propio usuario
+    hint: Sólo puede haber un administrador por empresa.
+    hints:
+      active: Los usuarios inactivos no pueden acceder a la aplicación
+      dark_theme: El tema oscuro es más adecuado para móviles
+    new_user: Nuevo usuario
+    privileges: Permisos

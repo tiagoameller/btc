@@ -1,0 +1,8 @@
+require("datatables.net-bs4")
+require("datatables.net-responsive-bs4")
+require("datatables.net-buttons-bs4")
+require("datatables.net-select-bs4")
+require("jquery-ui/ui/widgets/datepicker.js")
+require("jquery-ui/ui/i18n/datepicker-es.js")
+require("jquery-ui/ui/widgets/sortable")
+require("validations")

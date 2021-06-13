@@ -1,0 +1,254 @@
+# docs: https://github.com/rubocop-hq/rubocop/tree/master/manual
+
+require: rubocop-rails
+
+AllCops:
+  NewCops: enable
+  RubyInterpreters:
+    - ruby
+    - macruby
+    - rake
+    - jruby
+    - rbx
+  # Include common Ruby source files.
+  Include:
+    - '**/*.rb'
+    - '**/*.arb'
+    - '**/*.axlsx'
+    - '**/*.builder'
+    - '**/*.fcgi'
+    - '**/*.gemfile'
+    - '**/*.gemspec'
+    - '**/*.god'
+    - '**/*.jb'
+    - '**/*.jbuilder'
+    - '**/*.mspec'
+    - '**/*.opal'
+    - '**/*.pluginspec'
+    - '**/*.podspec'
+    - '**/*.rabl'
+    - '**/*.rake'
+    - '**/*.rbuild'
+    - '**/*.rbw'
+    - '**/*.rbx'
+    - '**/*.ru'
+    - '**/*.ruby'
+    - '**/*.spec'
+    - '**/*.thor'
+    - '**/*.watchr'
+    - '**/.irbrc'
+    - '**/.pryrc'
+    - '**/buildfile'
+    - '**/config.ru'
+    - '**/Appraisals'
+    - '**/Berksfile'
+    - '**/Brewfile'
+    - '**/Buildfile'
+    - '**/Capfile'
+    - '**/Cheffile'
+    - '**/Dangerfile'
+    - '**/Deliverfile'
+    - '**/Fastfile'
+    - '**/*Fastfile'
+    - '**/Gemfile'
+    - '**/Guardfile'
+    - '**/Jarfile'
+    - '**/Mavenfile'
+    - '**/Podfile'
+    - '**/Puppetfile'
+    - '**/Rakefile'
+    - '**/Snapfile'
+    - '**/Thorfile'
+    - '**/Vagabondfile'
+    - '**/Vagrantfile'
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
+    - 'db/**/*'
+    - 'lib/templates/rails/**/*.rb'
+    - 'bin/*'
+    - 'views/**/*'
+    - 'simple_form_bootstrap.rb'
+    - 'lib/tasks/auto_annotate_models.rake'
+  # command line options. More info: https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
+  DisplayCopNames: true
+  ExtraDetails: true
+  DisplayStyleGuide: true
+
+Metrics/ModuleLength:
+  Max: 350
+
+Metrics/BlockLength:
+  Max: 256
+  Exclude:
+    - 'spec/models/purchase_order_spec.rb'
+
+# Configuration parameters: AllowURI, URISchemes.
+# Metrics/LineLength:
+Layout/LineLength:
+  Max: 160
+  IgnoredPatterns: ['\A#']
+
+Metrics/ClassLength:
+  Max: 350
+
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 48
+  Exclude:
+    - 'lib/tasks/year_copy_items.rake'
+
+# Assignment Branch Condition size for %s is too high. [%.4g/%.4g]
+Metrics/AbcSize:
+  Max: 60
+
+Metrics/CyclomaticComplexity:
+  Max: 14
+
+Metrics/PerceivedComplexity:
+  Max: 14
+
+# Lint/RaiseException:
+#   Enabled: false
+
+# Lint/StructNewOverride:
+#   Enabled: false
+
+# Style/HashEachMethods:
+#   Enabled: false
+
+# Style/HashTransformKeys:
+#   Enabled: false
+
+# Style/HashTransformValues:
+#   Enabled: false
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+# Missing top-level class documentation comment
+Style/Documentation:
+  Enabled: false
+
+# this enforces to change a == 0 to a.zero? Problem arises when a is null or an expression
+Style/NumericPredicate:
+  Enabled: false
+
+# conflicts with Style/GuardClause in some cases
+Style/MultilineIfModifier:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/FormatString:
+  Enabled: false
+
+Style/MutableConstant:
+  Exclude:
+    - 'app/controllers/concerns/adjustment_excel_builder.rb'
+    - 'app/controllers/concerns/package_list_excel_builder.rb'
+    - 'app/controllers/concerns/purchase_excel_builder.rb'
+    - 'app/controllers/concerns/purchase_order_excel_builder.rb'
+    - 'app/controllers/concerns/sisconta_export.rb'
+    - 'app/controllers/concerns/table_formatted_excel_builder.rb'
+    - 'app/ext/sceti_receipt_printing.rb'
+    - 'app/helpers/application_helper.rb'
+    - 'app/models/concerns/contact_selectable_reports.rb'
+    - 'app/models/concerns/fso_labels.rb'
+    - 'app/models/concerns/item_selectable_reports.rb'
+    - 'app/models/concerns/purchase_order_selectable_reports.rb'
+    - 'spec/requests/contacts_spec.rb'
+
+# rubocop don't want stamping_1, but I like it
+Naming/VariableNumber:
+  Enabled: false
+
+Naming/FileName:
+  Exclude:
+    - 'Gemfile'
+    - 'Capfile'
+
+Layout/MultilineMethodCallBraceLayout:
+  Enabled: false
+
+# Layout/IndentFirstArrayElement:
+Layout/FirstArrayElementIndentation:
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
+    - 'db/**/*'
+    - 'lib/templates/rails/**/*.rb'
+    - 'bin/*'
+    - 'views/**/*'
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+Style/ExponentialNotation:
+  Enabled: true
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/RedundantFetchBlock:
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true
+
+Rails:
+  Enabled: true
+
+Rails/InverseOf:
+  Enabled: false
+
+Style/CommentedKeyword:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Rails/HasAndBelongsToMany:
+  Exclude:
+    - 'app/models/contact.rb'
+Rails/OutputSafety:
+  Enabled: false
+
+# Don't auto-correct this!
+Rails/HttpPositionalArguments:
+  Enabled: false
+
+Rails/ApplicationRecord:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false

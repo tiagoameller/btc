@@ -1,0 +1,149 @@
+---
+es:
+  activerecord:
+    models:
+      Audit:
+        one: Evento
+        other: Eventos
+      company:
+        one: Empresa
+        other: Empresas
+      user:
+        one: Usuario
+        other: Usuarios
+  attributes:
+    a_begin: tarde inicio
+    a_end: tarde final
+    active: activo
+    address_one: domicilio
+    address_two: línea adicional domicilio
+    admin_name: nombre administrador
+    afternoon: Tarde
+    api_access: Puede acceder a la API
+    api_token: API token
+    area: área (m2)
+    arrives: fecha/hora
+    base: causa
+    begin: inicio
+    bic: BIC
+    boolean_value: sí o no
+    city: ciudad
+    comment: comentario
+    company: empresa
+    company_email: email
+    company_id: empresa
+    company_name: nombre empresa
+    country: país
+    created_at: creado en
+    current_sign_in_at: logueado hace
+    current_sign_in_ip: logueado desde
+    custom_field_id: campo configurable
+    dark_theme: tema oscuro
+    dashboard: estadísticas
+    data_dashboard_url: URL del panel de control
+    data_spreadsheet_key: clave hoja de datos en gsheets
+    date: fecha
+    day: día
+    day_total: total día
+    default_admin: administrador por defecto
+    description: descripción
+    doc: texto
+    done: hecho
+    email: email
+    employee: empleado
+    employee_count: empleados
+    encrypted_password: contraseña
+    end: final
+    event: evento
+    extra: Extra
+    first_name: nombre
+    full_address: domicilio
+    hint: Texto opcional con más información para el usuario
+    hours: horas
+    iban: IBAN
+    id: identificador
+    images: Imágenes
+    inactive: inactivo
+    items:
+      description: descripción
+    kind: tipo
+    last_name: apellidos
+    last_punch: Último fichaje
+    last_sign_in_at: último logueo hace
+    last_sign_in_ip: último logueo desde
+    lat: latitud
+    location: Ubicación
+    login: usuario o email
+    loginname: nombre para acceder
+    lon: longiutd
+    m_begin: mañana inicio
+    m_end: mañana final
+    manager: representante del propietario
+    manager_abbr: representante
+    manager_id: representante del propietario
+    month: mes
+    morning: mañana
+    must_ask: debe pedirse
+    name: nombre completo
+    name_abbr: nombre
+    nick: abreviatura empresa
+    note: nota
+    organization: organización
+    owner: propietario
+    owner_id: propietario
+    owner_not_assigned: propietario sin asignar
+    paid_plan: plan contratado
+    paid_user_count: usuarios de pago
+    password: contraseña
+    phone: teléfono
+    picture: foto
+    picture_count: fotos
+    prospect_email: email válido para recibir las claves de acceso
+    prospect_username: nombre usuario
+    remember_created_at: recuperó su contraseña
+    reset_password_sent_at: enviado crear nueva contraseña
+    reset_password_token: testigo crear nueva contraseña
+    role: rol
+    section: sección
+    sign_in_count: número de logueos
+    sorted: orden
+    state: estado/comunidad/provincia
+    status: estado
+    total: total
+    updated_at: actualizado en
+    user: usuario
+    user_count: total usuarios
+    user_id: usuario
+    username: usuario
+    vat_number: NIF/CIF
+    website: sitio web
+    week: semana
+    when: cuando
+    working: activo
+    x_begin: extra inicio
+    x_end: extra final
+    year: año
+    zip_code: código postal
+  company:
+    active_users_summary: Ahora hay %{active_count} usuarios activos de los %{count} que permite la tarifa contratada
+    max_active_users_reached: Se han alcanzado los %{count} usuarios que permite la tarifa contratada
+  enums:
+    company:
+      paid_plan:
+        free: Gratis
+        life: Pago único
+        month: Pago mensual
+        two_years: Pago bienal
+        year: Pago anual
+    user:
+      role:
+        admin: administrador
+        employee: empleado
+        guest: invitado
+        office: oficina
+        super_admin: súper administrador
+  iban:
+    invalid: IBAN no es válido
+  validations:
+    task:
+      sample: placeholder

@@ -1,0 +1,17 @@
+---
+en:
+  frontend:
+    common:
+      not_implemented: Lo sentimos, esta característica todavía no se ha implementado
+    daterangepicker:
+      applyLabel: Aplicar
+      cancelLabel: Cancelar
+      customRangeLabel: Otros
+      format: DD/MM/YYYY
+      fromLabel: Desde
+      last_month: Mes pasado
+      last_week: Semana pasada
+      this_month: Este mes
+      toLabel: Hasta
+      today: Hoy
+      yesterday: Ayer

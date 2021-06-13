@@ -1,0 +1,10 @@
+- if respond_to?(:breadcrumbs) && breadcrumbs&.any?
+  .c-subheader.justify-content-between.px-3
+    ol.breadcrumb.border-0.m-0.px-0.px-md-3
+      - breadcrumbs.each_with_index do |breadcrumb, i|
+        - if breadcrumbs.size == (i + 1)
+          li.breadcrumb-item.active
+            = breadcrumb[:label]
+        - else
+          li.breadcrumb-item
+            = link_to breadcrumb[:label], breadcrumb[:url]

@@ -1,0 +1,19 @@
+---
+es:
+  emails:
+    common:
+      brand: SaaS para lo que sea
+      mailto_subject: Relativo a %{customer_document_name}
+      sent_to: Este correo se ha enviado a %{customer}
+      unsubscribe: No más correos
+    fill_fields:
+      button: Rellenar los campos ahora
+      press_button: Al pulsar el botón será dirigido a nuestra web para que nos informe
+      questions_1: Si tiene alguna duda, contacte conmigo en el correo
+      questions_2: o llamando al %{phone}
+      subtitle: Por favor, rellene los campos
+    reset_password:
+      change: Cambiar mi contraseña
+      text_1: Alguien, suponemos que tú, nos ha pedido cambiar tu contraseña. Pulsa en el botón para hacerlo.
+      text_2: Si no has sido tú, puedes ignorar este correo.
+      text_3: Tu contraseña no se modificará hasta que pulses el botón y especifiques una nueva.

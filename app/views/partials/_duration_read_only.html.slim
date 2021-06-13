@@ -1,0 +1,16 @@
+.form-group.row
+  .col-sm-4.xs-2.mb-2
+    .form-control-label.capitalize-first-word
+      = t "attributes.#{group}_begin"
+    .form-text.font-weight-bold
+      = @punch.send("#{group}_begin")
+  .col-sm-4.xs-2.mb-2
+    .form-control-label.capitalize-first-word
+      = t "attributes.#{group}_end"
+    .form-text.font-weight-bold
+      = @punch.send("#{group}_end")
+  .col-sm-4.xs-2.mb-2
+    .form-control-label.capitalize-first-word
+      = t "attributes.total"
+    .form-text.font-weight-bold
+      = @punch.send("#{group}_duration")
