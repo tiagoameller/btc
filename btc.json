@@ -1,0 +1,130 @@
+[
+  {
+    "time": {
+      "updated": "Jun 12, 2021 17:34:00 UTC",
+      "updatedISO": "2021-06-12T17:34:00+00:00",
+      "updateduk": "Jun 12, 2021 at 18:34 BST"
+    },
+    "disclaimer": "This data was produced from the CoinDesk Bitcoin Price Index (USD). Non-USD currency data converted using hourly conversion rate from openexchangerates.org",
+    "chartName": "Bitcoin",
+    "bpi": {
+      "USD": {
+        "code": "USD",
+        "symbol": "&#36;",
+        "rate": "35,579.3333",
+        "description": "United States Dollar",
+        "rate_float": 35579.3333
+      },
+      "GBP": {
+        "code": "GBP",
+        "symbol": "&pound;",
+        "rate": "25,220.1614",
+        "description": "British Pound Sterling",
+        "rate_float": 25220.1614
+      },
+      "EUR": {
+        "code": "EUR",
+        "symbol": "&euro;",
+        "rate": "29,382.6587",
+        "description": "Euro",
+        "rate_float": 29382.6587
+      }
+    }
+  },
+  {
+    "time": {
+      "updated": "Jun 12, 2021 17:35:00 UTC",
+      "updatedISO": "2021-06-12T17:35:00+00:00",
+      "updateduk": "Jun 12, 2021 at 18:35 BST"
+    },
+    "disclaimer": "This data was produced from the CoinDesk Bitcoin Price Index (USD). Non-USD currency data converted using hourly conversion rate from openexchangerates.org",
+    "chartName": "Bitcoin",
+    "bpi": {
+      "USD": {
+        "code": "USD",
+        "symbol": "&#36;",
+        "rate": "35,600.5442",
+        "description": "United States Dollar",
+        "rate_float": 35600.5442
+      },
+      "GBP": {
+        "code": "GBP",
+        "symbol": "&pound;",
+        "rate": "25,235.1966",
+        "description": "British Pound Sterling",
+        "rate_float": 25235.1966
+      },
+      "EUR": {
+        "code": "EUR",
+        "symbol": "&euro;",
+        "rate": "29,400.1754",
+        "description": "Euro",
+        "rate_float": 29400.1754
+      }
+    }
+  },
+  {
+    "time": {
+      "updated": "Jun 12, 2021 17:36:00 UTC",
+      "updatedISO": "2021-06-12T17:36:00+00:00",
+      "updateduk": "Jun 12, 2021 at 18:36 BST"
+    },
+    "disclaimer": "This data was produced from the CoinDesk Bitcoin Price Index (USD). Non-USD currency data converted using hourly conversion rate from openexchangerates.org",
+    "chartName": "Bitcoin",
+    "bpi": {
+      "USD": {
+        "code": "USD",
+        "symbol": "&#36;",
+        "rate": "35,615.7412",
+        "description": "United States Dollar",
+        "rate_float": 35615.7412
+      },
+      "GBP": {
+        "code": "GBP",
+        "symbol": "&pound;",
+        "rate": "25,245.9688",
+        "description": "British Pound Sterling",
+        "rate_float": 25245.9688
+      },
+      "EUR": {
+        "code": "EUR",
+        "symbol": "&euro;",
+        "rate": "29,412.7256",
+        "description": "Euro",
+        "rate_float": 29412.7256
+      }
+    }
+  },
+  {
+    "time": {
+      "updated": "Jun 12, 2021 17:36:00 UTC",
+      "updatedISO": "2021-06-12T17:36:00+00:00",
+      "updateduk": "Jun 12, 2021 at 18:36 BST"
+    },
+    "disclaimer": "This data was produced from the CoinDesk Bitcoin Price Index (USD). Non-USD currency data converted using hourly conversion rate from openexchangerates.org",
+    "chartName": "Bitcoin",
+    "bpi": {
+      "USD": {
+        "code": "USD",
+        "symbol": "&#36;",
+        "rate": "35,615.7412",
+        "description": "United States Dollar",
+        "rate_float": 35615.7412
+      },
+      "GBP": {
+        "code": "GBP",
+        "symbol": "&pound;",
+        "rate": "25,245.9688",
+        "description": "British Pound Sterling",
+        "rate_float": 25245.9688
+      },
+      "EUR": {
+        "code": "EUR",
+        "symbol": "&euro;",
+        "rate": "29,412.7256",
+        "description": "Euro",
+        "rate_float": 29412.7256
+      }
+    }
+  }
+]
