@@ -87,4 +87,6 @@ group :test do
   gem 'simplecov', require: false
   gem 'apparition'
   gem 'rubocop-rspec'
+  # https://github.com/travisjeffery/timecop
+  gem 'timecop'
 end
