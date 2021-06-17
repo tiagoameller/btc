@@ -15,7 +15,15 @@ ActiveRecord::Schema.define(version: 2021_06_13_174046) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "averages", force: :cascade do |t|
+  create_table "exchange_logs", id: false, force: :cascade do |t|
+    t.datetime "updated"
+    t.float "usd_rate", default: 0.0
+    t.float "gbp_rate", default: 0.0
+    t.float "eur_rate", default: 0.0
+    t.index ["updated"], name: "index_exchange_logs_on_updated", unique: true, order: :desc
+  end
+
+  create_table "saved_averages", force: :cascade do |t|
     t.integer "kind"
     t.string "key"
     t.float "usd_sum", default: 0.0
@@ -24,15 +32,7 @@ ActiveRecord::Schema.define(version: 2021_06_13_174046) do
     t.integer "gbp_count", default: 0
     t.float "eur_sum", default: 0.0
     t.integer "eur_count", default: 0
-    t.index ["kind", "key"], name: "index_averages_on_kind_and_key", unique: true
-  end
-
-  create_table "exchange_logs", id: false, force: :cascade do |t|
-    t.datetime "updated"
-    t.float "usd_rate", default: 0.0
-    t.float "gbp_rate", default: 0.0
-    t.float "eur_rate", default: 0.0
-    t.index ["updated"], name: "index_exchange_logs_on_updated", unique: true, order: :desc
+    t.index ["kind", "key"], name: "index_saved_averages_on_kind_and_key", unique: true
   end
 
 end

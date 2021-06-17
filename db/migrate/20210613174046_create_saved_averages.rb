@@ -1,6 +1,6 @@
-class CreateAverages < ActiveRecord::Migration[6.1]
+class CreateSavedAverages < ActiveRecord::Migration[6.1]
   def change
-    create_table :averages do |t|
+    create_table :saved_averages do |t|
       t.integer :kind
       t.string :key
       t.float :usd_sum, default: 0
@@ -11,6 +11,6 @@ class CreateAverages < ActiveRecord::Migration[6.1]
       t.integer :eur_count, default: 0
     end
 
-    add_index :averages, [:kind, :key], unique: true
+    add_index :saved_averages, [:kind, :key], unique: true
   end
 end

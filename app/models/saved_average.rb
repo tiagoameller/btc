@@ -1,7 +1,8 @@
 # == Schema Information
 #
-# Table name: averages
+# Table name: saved_averages
 #
+#  id        :bigint           not null, primary key
 #  kind      :integer
 #  key       :string
 #  usd_sum   :float            default(0.0)
@@ -13,10 +14,9 @@
 #
 # Indexes
 #
-#  index_averages_on_kind_and_key  (kind,key) UNIQUE
+#  index_saved_averages_on_kind_and_key  (kind,key) UNIQUE
 #
-class Average < ApplicationRecord
-  include AverageCalculator
+class SavedAverage < ApplicationRecord
   self.implicit_order_column = [:kind, :key]
 
   enum kind: { day: 0, hour: 1, minute: 2 }
