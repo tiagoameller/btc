@@ -45,14 +45,20 @@ module Api
       # curl -X POST -H "Content-Type: application/json" -d @/tmp/btc.json http://localhost:3000/api/v1/exchange_logs
 
       def create
-        updated = Time.zone.parse params.dig('time', 'updated')
+        updated = Time.zone.parse(params.dig('time', 'updated') || 'bad date')
+        raise ArgumentError unless updated
+
         ExchangeLog.create!(
           updated: updated,
           usd_rate: params.dig('bpi', 'USD', 'rate_float'),
           gbp_rate: params.dig('bpi', 'GBP', 'rate_float'),
           eur_rate: params.dig('bpi', 'EUR', 'rate_float')
         )
-        render json: { ok: 'Echange log saved' }, stauts: 200
+        render json: { ok: 'Exchange log saved' }, stauts: 200
+      rescue ArgumentError
+        render json: { error: 'Bad parameters for exchange log. Rejected' }, stauts: 400
+      rescue ActiveRecord::NotNullViolation
+        render json: { error: 'All rate values are required for exchange log. Rejected' }, stauts: 400
       rescue ActiveRecord::RecordNotUnique
         render json: { error: 'Duplicate timestamp for exchange log. Rejected' }, stauts: 409
       end

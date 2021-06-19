@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 2021_06_13_174046) do
 
   create_table "exchange_logs", id: false, force: :cascade do |t|
     t.datetime "updated"
-    t.float "usd_rate", default: 0.0
-    t.float "gbp_rate", default: 0.0
-    t.float "eur_rate", default: 0.0
+    t.float "usd_rate", default: 0.0, null: false
+    t.float "gbp_rate", default: 0.0, null: false
+    t.float "eur_rate", default: 0.0, null: false
     t.index ["updated"], name: "index_exchange_logs_on_updated", unique: true, order: :desc
   end
 
