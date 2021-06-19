@@ -1,13 +1,13 @@
-module Stats
+module Rates
   class Average
-    attr_reader :usd_rate, :gbp_rate, :eur_rate
+    attr_reader :usd, :gbp, :eur
 
     private
 
-    def initialize(usd_rate, gbp_rate, eur_rate)
-      @usd_rate = usd_rate
-      @gbp_rate = gbp_rate
-      @eur_rate = eur_rate
+    def initialize(usd, gbp, eur)
+      @usd = usd
+      @gbp = gbp
+      @eur = eur
     end
 
     class << self

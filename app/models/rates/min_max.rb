@@ -1,4 +1,4 @@
-module Stats
+module Rates
   class MinMax
     attr_reader :min, :max
 
@@ -10,27 +10,15 @@ module Stats
     end
 
     class << self
-      def min_usd(start, finish)
+      def usd(start, finish)
         calculate(:usd, start, finish)
       end
 
-      def max_usd(start, finish)
-        calculate(:usd, start, finish)
-      end
-
-      def min_gbp(start, finish)
+      def gbp(start, finish)
         calculate(:gbp, start, finish)
       end
 
-      def max_gbp(start, finish)
-        calculate(:gbp, start, finish)
-      end
-
-      def min_eur(start, finish)
-        calculate(:eur, start, finish)
-      end
-
-      def max_eur(start, finish)
+      def eur(start, finish)
         calculate(:eur, start, finish)
       end
 
