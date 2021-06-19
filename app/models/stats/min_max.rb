@@ -41,7 +41,7 @@ module Stats
         if result.empty?
           null_object
         else
-          mew(
+          new(
             result.min,
             result.max
           )
