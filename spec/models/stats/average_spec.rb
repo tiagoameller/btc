@@ -5,24 +5,24 @@ RSpec.describe Stats::Average, type: :model do
     before { Timecop.travel(2019, 1, 1, 12, 0, 0) }
     after { Timecop.return }
 
-    let(:exchange_log) { ExchangeLog.create!(attributes_for(:exchange_log, updated: Time.current)) }
-    let(:exchange_log_same_day) { ExchangeLog.create!(attributes_for(:exchange_log_higher, updated: Time.current + 2.hours)) }
-    let(:exchange_log_same_hour) { ExchangeLog.create!(attributes_for(:exchange_log_higher, updated: Time.current + 45.minutes)) }
-    let(:exchange_log_same_minute) { ExchangeLog.create!(attributes_for(:exchange_log_higher, updated: Time.current + 45.seconds)) }
+    let(:exchange_log) { build(:exchange_log, updated: Time.current) }
+    let(:exchange_log_same_day) { build(:exchange_log_higher, updated: Time.current + 2.hours) }
+    let(:exchange_log_same_hour) { build(:exchange_log_higher, updated: Time.current + 45.minutes) }
+    let(:exchange_log_same_minute) { build(:exchange_log_higher, updated: Time.current + 45.seconds) }
 
     context 'adding exchange for first time' do
       it 'day average is equal to added' do
-        Stats::Average.add_exchange(exchange_log)
+        exchange_log.save!
         subject = Stats::Average.day(exchange_log.updated)
         expect(subject.usd_rate).to eq exchange_log.usd_rate
       end
       it 'hour average is equal to added' do
-        Stats::Average.add_exchange(exchange_log)
+        exchange_log.save!
         subject = Stats::Average.hour(exchange_log.updated)
         expect(subject.usd_rate).to eq exchange_log.usd_rate
       end
       it 'minute average is equal to added' do
-        Stats::Average.add_exchange(exchange_log)
+        exchange_log.save!
         subject = Stats::Average.minute(exchange_log.updated)
         expect(subject.usd_rate).to eq exchange_log.usd_rate
       end
@@ -30,8 +30,8 @@ RSpec.describe Stats::Average, type: :model do
 
     context 'more than one exchange in a day' do
       before do
-        Stats::Average.add_exchange(exchange_log)
-        Stats::Average.add_exchange(exchange_log_same_day)
+        exchange_log.save!
+        exchange_log_same_day.save!
       end
       it 'usd day average is calculated' do
         subject = Stats::Average.day(exchange_log.updated)
@@ -49,8 +49,8 @@ RSpec.describe Stats::Average, type: :model do
 
     context 'more than one exchange in a hour' do
       before do
-        Stats::Average.add_exchange(exchange_log)
-        Stats::Average.add_exchange(exchange_log_same_hour)
+        exchange_log.save!
+        exchange_log_same_hour.save!
       end
       it 'usd hour average is calculated' do
         subject = Stats::Average.hour(exchange_log.updated)
@@ -68,8 +68,8 @@ RSpec.describe Stats::Average, type: :model do
 
     context 'more than one exchange in a minute' do
       before do
-        Stats::Average.add_exchange(exchange_log)
-        Stats::Average.add_exchange(exchange_log_same_minute)
+        exchange_log.save!
+        exchange_log_same_minute.save!
       end
       it 'usd minute average is calculated' do
         subject = Stats::Average.minute(exchange_log.updated)

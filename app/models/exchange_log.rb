@@ -13,4 +13,8 @@
 #
 class ExchangeLog < ApplicationRecord
   self.implicit_order_column = 'updated'
+
+  after_save do
+    Stats::Average.add_exchange(self)
+  end
 end
