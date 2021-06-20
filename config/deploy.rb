@@ -1,12 +1,12 @@
 # config valid only for current version of Capistrano
 # lock '3.9.1'
 
-set :application, 'myapp'
-set :repo_url, 'git@gitlab.com:m01sl/myappgit'
+set :application, 'btc'
+set :repo_url, 'https://github.com/tiagoameller/btc/'
 
-set :deploy_to, '/home/deploy/myapp'
+set :deploy_to, '/home/deploy/btc'
 
-append :linked_files, 'config/database.yml', 'config/master.key', 'config/data_studio_secret.json'
+append :linked_files, 'config/database.yml', 'config/master.key'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads', 'storage'
 
 # Default branch is :master
