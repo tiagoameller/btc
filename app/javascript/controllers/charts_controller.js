@@ -9,7 +9,8 @@ export default class extends ApplicationController {
   }
 
   fetchSelectedGraph () {
-
+    const btn = document.querySelectorAll('.time-nav.active')[0]
+    if (btn) btn.click()
   }
 
   fetchGraphData (e) {
@@ -35,9 +36,9 @@ export default class extends ApplicationController {
       data: {
         labels: data.labels,
         datasets: [
-          buildDataset('usd', '#321fdb'),
-          buildDataset('gbp', '#f79f0f'),
-          buildDataset('eur', '#dd4141')
+          this.buildDataset(data, 'usd', '#321fdb'),
+          this.buildDataset(data, 'gbp', '#f79f0f'),
+          this.buildDataset(data, 'eur', '#dd4141')
         ]
       },
       options: {
@@ -76,7 +77,7 @@ export default class extends ApplicationController {
     this.btcChart.update()
   }
 
-  buildDataset (currency, color) {
+  buildDataset (data, currency, color) {
     return {
       label: `${currency.toUpperCase()} - Min: ${data[currency].min_max.min} Max: ${data[currency].min_max.max}`,
       backgroundColor: color,
