@@ -20,11 +20,12 @@
 **Note data:**
 
 Some random BTC values are created when seeding, but they quickly will become obsolete.
-So, you can post new data to feed the database. A simple and effective way is run this pair of `curl`:
+So, you can post new data to feed the database. A simple and effective way is to run this pair of `curl`:
 
 `curl https://api.coindesk.com/v1/bpi/currentprice.json | curl -X POST -H "Content-Type: application/json" -d @- http://localhost:3000/api/v1/exchange_logs`
 
 This will download real time data from [Coindesk](https://coindesk.com) and push it to this app API
 
-Thanks to websockets powered by ActionCable, frontend is updated in realtime
+Thanks to websockets powered by ActionCable, the frontend is updated in realtime
 
+You can also see *for a limited time* this app [running at one of my servers](http://piscinario.com)

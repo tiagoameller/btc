@@ -84,7 +84,7 @@ export default class extends ApplicationController {
       borderColor: color,
       pointHoverBackgroundColor: '#fff',
       borderWidth: 2,
-      data: data[currency].average
+      data: data[currency].average.map((v) => (v === 0 ? null : v))
     }
   }
 
