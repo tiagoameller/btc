@@ -4,7 +4,7 @@
 # timestamps in btc.json will be ignored: we'll take current timestamp - 24h as starting point
 #
 
-json = JSON.parse(File.read(Rails.root.join('btc.json')))
+json = JSON.parse(File.read(Rails.root.join('spec', 'fixtures', 'btc.json')))
 
 updated = 1.day.ago
 ExchangeLog.connection.transaction do

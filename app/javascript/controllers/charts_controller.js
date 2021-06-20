@@ -5,6 +5,11 @@ export default class extends ApplicationController {
 
   connect() {
     this.fetchGraphData(this.dayTarget)
+    setInterval(() => { this.fetchSelectedGraph() }, 60000)
+  }
+
+  fetchSelectedGraph () {
+
   }
 
   fetchGraphData (e) {
@@ -29,30 +34,10 @@ export default class extends ApplicationController {
       type: 'line',
       data: {
         labels: data.labels,
-        datasets: [{
-            label: 'USD',
-            backgroundColor: '#321fdb',
-            borderColor: '#321fdb',
-            pointHoverBackgroundColor: '#fff',
-            borderWidth: 2,
-            data: data.usd.average
-          },
-          {
-            label: 'GBP',
-            backgroundColor: '#F79F0F',
-            borderColor: '#F79F0F',
-            pointHoverBackgroundColor: '#fff',
-            borderWidth: 2,
-            data: data.gbp.average
-          },
-          {
-            label: 'EUR',
-            backgroundColor: '#DD4141',
-            borderColor: '#DD4141',
-            pointHoverBackgroundColor: '#fff',
-            borderWidth: 2,
-            data: data.eur.average
-          }
+        datasets: [
+          buildDataset('usd', '#321fdb'),
+          buildDataset('gbp', '#f79f0f'),
+          buildDataset('eur', '#dd4141')
         ]
       },
       options: {
@@ -67,8 +52,8 @@ export default class extends ApplicationController {
         },
         scales: {
           y: {
-              suggestedMin: 20000,
-              suggestedMax: 40000
+            suggestedMin: 20000,
+            suggestedMax: 40000
           },
           x: {
             title: {
@@ -89,6 +74,17 @@ export default class extends ApplicationController {
     });
 
     this.btcChart.update()
+  }
+
+  buildDataset (currency, color) {
+    return {
+      label: `${currency.toUpperCase()} - Min: ${data[currency].min_max.min} Max: ${data[currency].min_max.max}`,
+      backgroundColor: color,
+      borderColor: color,
+      pointHoverBackgroundColor: '#fff',
+      borderWidth: 2,
+      data: data[currency].average
+    }
   }
 
   toggleActive (btn) {
