@@ -34,9 +34,9 @@ HTML[lang="#{I18n.default_locale}"]
     - if content_for? :head
       = yield :head
 
-    javascript:
-      I18n.defaultLocale = "#{I18n.default_locale}";
-      I18n.locale = "#{I18n.locale}";
+    / javascript:
+    /   I18n.defaultLocale = "#{I18n.default_locale}";
+    /   I18n.locale = "#{I18n.locale}";
 
     = content_tag(\
       :body, \

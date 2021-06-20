@@ -1,0 +1,47 @@
+.container-fluid
+  .animated.fade-in
+    .card data-controller="charts"
+      .card-header
+        h1
+          | BitCoin rate history
+        small
+          a.h5 href="https://www.coindesk.com/price/bitcoin" target="_blank"
+            | Powered by CoinDesk
+
+      .card-body
+        .d-flex.justify-content-end
+          .btn-group.justify-content-end[role="group"]
+            button.btn.btn-outline-primary.time-nav[
+              type="button"
+              data-action="click->charts#fetchGraphData"
+              data-url="#{month_rates_path}"
+              data-charts-target="month"
+            ]
+              | 30 days
+            button.btn.btn-outline-primary.time-nav.active[
+              type="button"
+              data-action="click->charts#fetchGraphData"
+              data-url="#{day_rates_path}"
+              data-charts-target="day"
+            ]
+              | 24 hours
+            button.btn.btn-outline-primary.time-nav[
+              type="button"
+              data-action="click->charts#fetchGraphData"
+              data-url="#{hour_rates_path}"
+              data-charts-target="hour"
+            ]
+              | Last hour
+
+        .c-chart-wrapper
+          .chartjs-size-monitor
+            .chartjs-size-monitor-expand
+              div
+            .chartjs-size-monitor-shrink
+              div
+          canvas#btc-chart.chart.chartjs-render-monitor[
+            height="600"
+            width="1549"
+            style="display: block;"
+            data-charts-target="chart"
+          ]

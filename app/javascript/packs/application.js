@@ -4,7 +4,6 @@ require("turbolinks").start()
 import "controllers"
 import "libraries"
 import "framework"
-import "charts"
 import "@coreui/icons/css/all.min.css"
 import "application.scss"
 

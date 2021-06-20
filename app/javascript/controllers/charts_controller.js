@@ -1,71 +1,98 @@
 import Chart from "chart.js/auto"
+import Rails from "@rails/ujs"
 export default class extends ApplicationController {
+  static targets = ["chart", "month", "day", "hour"]
 
-  connect () {
-    if (myChart != undefined) {
-      myChart.destroy()
+  connect() {
+    this.fetchGraphData(this.dayTarget)
+  }
+
+  fetchGraphData (e) {
+    const btn = (e.type === "click" ? e.currentTarget : e)
+    this.toggleActive(btn)
+
+    Rails.ajax({
+      url: btn.getAttribute('data-url'),
+      type: "get",
+      dataType: "json",
+      error: (_jqXHR, textStatus, errorThrown) => App.common_controller.toast(`AJAX Error: ${textStatus}`, errorThrown || "Lost connection to server", "error"),
+      success: (data, _textStatus, _jqXHR) => { this.drawGraph(data) }
+    })
+  }
+
+  drawGraph (data) {
+    if (this.btcChart != undefined) {
+      this.btcChart.destroy()
     }
 
-    var myChart = new Chart(document.getElementById('my-chart'),{
-        type: 'line',
-        data: {
-            labels: ['a','b','c','d','e','f','g', 'a','b','c','d','e','f','g', 'a','b','c','d','e','f','g', 'a','b','c','d','e','f','g'],
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'transparent',
-                borderColor: '#321fdb',
-                pointHoverBackgroundColor: '#fff',
-                borderWidth: 2,
-                data: [165, 180, 70, 69, 77, 57, 125, 165, 172, 91, 173, 138, 155, 89, 50, 161, 65, 163, 160, 103, 114, 185, 125, 196, 183, 64, 137, 95, 112, 175]
-            }, {
-                label: 'My Second dataset',
-                backgroundColor: 'transparent',
-                borderColor: '#2eb85c',
-                pointHoverBackgroundColor: '#fff',
-                borderWidth: 2,
-                data: [92, 97, 80, 100, 86, 97, 83, 98, 87, 98, 93, 83, 87, 98, 96, 84, 91, 97, 88, 86, 94, 86, 95, 91, 98, 91, 92, 80, 83, 82]
-            }, {
-                label: 'My Third dataset',
-                backgroundColor: 'transparent',
-                borderColor: '#e55353',
-                pointHoverBackgroundColor: '#fff',
-                borderWidth: 1,
-                // borderDash: [8, 5],
-                data: [42, 47, 83, 133, 86, 47, 83, 48, 87, 48, 43, 83, 87, 48, 46, 84, 41, 47, 88, 86, 44, 86, 45, 41, 48, 41, 42, 83, 83, 82]
-                //data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65]
-            }]
+    this.btcChart = new Chart(this.chartTarget, {
+      type: 'line',
+      data: {
+        labels: data.labels,
+        datasets: [{
+            label: 'USD',
+            backgroundColor: '#321fdb',
+            borderColor: '#321fdb',
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 2,
+            data: data.usd.average
+          },
+          {
+            label: 'GBP',
+            backgroundColor: '#F79F0F',
+            borderColor: '#F79F0F',
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 2,
+            data: data.gbp.average
+          },
+          {
+            label: 'EUR',
+            backgroundColor: '#DD4141',
+            borderColor: '#DD4141',
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 2,
+            data: data.eur.average
+          }
+        ]
+      },
+      options: {
+        mytainAspectRatio: false,
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+            align: 'start'
+          }
         },
-        options: {
-            mytainAspectRatio: false,
-            legend: {
-                display: false
-            },
-            scales: {
-                xAxes: [{
-                    gridLines: {
-                        drawOnChartArea: false
-                    }
-                }],
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        maxTicksLimit: 5,
-                        stepSize: Math.ceil(250 / 5),
-                        max: 250
-                    }
-                }]
-            },
-            elements: {
-                point: {
-                    radius: 0,
-                    hitRadius: 10,
-                    hoverRadius: 4,
-                    hoverBorderWidth: 3
-                }
+        scales: {
+          y: {
+              suggestedMin: 20000,
+              suggestedMax: 40000
+          },
+          x: {
+            title: {
+              display: true,
+              text: data.x_title
             }
+          }
+        },
+        elements: {
+          point: {
+            radius: 0,
+            hitRadius: 10,
+            hoverRadius: 4,
+            hoverBorderWidth: 3
+          }
         }
+      }
     });
 
-    myChart.update()
+    this.btcChart.update()
+  }
+
+  toggleActive (btn) {
+    document.querySelectorAll('.time-nav').forEach((e) => e.classList.remove('active'))
+    btn.classList.add('active')
   }
 }
