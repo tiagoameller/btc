@@ -31,6 +31,8 @@ HTML[lang="#{I18n.default_locale}"]
     = stylesheet_link_tag href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
     = stylesheet_link_tag href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
 
+    = action_cable_meta_tag
+
     - if content_for? :head
       = yield :head
 

@@ -29,18 +29,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'rails-i18n'
-gem 'kaminari'
 gem 'local_time'
 gem 'slim-rails'
-gem 'semver2'
 gem 'enum_help'
-gem 'i18n-js'
 gem 'amazing_print'
-gem 'humanize_boolean'
-gem 'acts_as_list'
 gem 'aasm'
-gem 'command_line_reporter', '>=3.0'
-gem 'active_model_serializers'
 gem 'capistrano'
 gem 'capistrano-passenger'
 gem 'capistrano-rails'
@@ -65,7 +58,6 @@ group :development do
   gem 'better_errors'
   gem 'rubocop-rails'
   gem 'spring-watcher-listen'
-  gem 'i18n-tasks'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.

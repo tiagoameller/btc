@@ -55,6 +55,7 @@ module Api
           eur_rate: params.dig('bpi', 'EUR', 'rate_float')
         )
         render json: { ok: 'Exchange log saved' }, stauts: 200
+        ActionCable.server.broadcast('background_update_channel', data: { id: 1 })
       rescue ArgumentError
         render json: { error: 'Bad parameters for exchange log. Rejected' }, stauts: 400
       rescue ActiveRecord::NotNullViolation

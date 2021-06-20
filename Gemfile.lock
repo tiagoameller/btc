@@ -41,11 +41,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    active_model_serializers (0.10.12)
-      actionpack (>= 4.1, < 6.2)
-      activemodel (>= 4.1, < 6.2)
-      case_transform (>= 0.2)
-      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (6.1.3.2)
       activesupport (= 6.1.3.2)
       globalid (>= 0.3.6)
@@ -67,8 +62,6 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    acts_as_list (1.0.4)
-      activerecord (>= 4.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
@@ -118,13 +111,8 @@ GEM
     capybara-screenshot (1.0.25)
       capybara (>= 1.0, < 4)
       launchy
-    case_transform (0.2)
-      activesupport
     childprocess (3.0.0)
     coderay (1.1.3)
-    colored (1.2)
-    command_line_reporter (4.0.2)
-      colored (>= 1.2)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     database_cleaner (2.0.1)
@@ -153,38 +141,10 @@ GEM
       ruby-progressbar (~> 1.4)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    highline (2.0.3)
-    humanize_boolean (0.0.2)
-      i18n
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
-    i18n-js (3.8.3)
-      i18n (>= 0.6.6)
-    i18n-tasks (0.9.34)
-      activesupport (>= 4.0.2)
-      ast (>= 2.1.0)
-      erubi
-      highline (>= 2.0.0)
-      i18n
-      parser (>= 2.2.3.0)
-      rails-i18n
-      rainbow (>= 2.2.2, < 4.0)
-      terminal-table (>= 1.5.1)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
-    jsonapi-renderer (0.2.2)
-    kaminari (1.2.1)
-      activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.1)
-      kaminari-activerecord (= 1.2.1)
-      kaminari-core (= 1.2.1)
-    kaminari-actionview (1.2.1)
-      actionview
-      kaminari-core (= 1.2.1)
-    kaminari-activerecord (1.2.1)
-      activerecord
-      kaminari-core (= 1.2.1)
-    kaminari-core (1.2.1)
     launchy (2.5.0)
       addressable (~> 2.7)
     listen (3.5.1)
@@ -325,7 +285,6 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
-    semver2 (3.4.2)
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
     simplecov (0.21.2)
@@ -356,8 +315,6 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     temple (0.8.2)
-    terminal-table (3.0.1)
-      unicode-display_width (>= 1.1.1, < 3)
     thor (1.1.0)
     tilt (2.0.10)
     timecop (0.9.4)
@@ -393,8 +350,6 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
-  active_model_serializers
-  acts_as_list
   amazing_print
   annotate
   apparition
@@ -408,17 +363,12 @@ DEPENDENCIES
   capistrano-rbenv
   capybara (>= 3.26)
   capybara-screenshot
-  command_line_reporter (>= 3.0)
   database_cleaner
   debase
   enum_help
   factory_bot_rails
   fuubar
-  humanize_boolean
-  i18n-js
-  i18n-tasks
   jbuilder (~> 2.7)
-  kaminari
   listen (~> 3.3)
   local_time
   pg (~> 1.1)
@@ -435,7 +385,6 @@ DEPENDENCIES
   ruby-debug-ide
   sass-rails (>= 6)
   selenium-webdriver
-  semver2
   shoulda-matchers
   simplecov
   slim-rails
