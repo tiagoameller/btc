@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## BTC. Sample Rails 6.1 project.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Features
+* API to post BTC exchange values for USD, GBP and EUR
+* Shows last 30 days, 24 hours and last hour average rates
+* ActionCable for updating frontend when a new exchange value is posted to API
+* Abstractions for Rates::Average and Rates::MinMax
+* Service objects for generating backend info on frontend demand

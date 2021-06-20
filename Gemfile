@@ -39,6 +39,7 @@ gem 'capistrano-passenger'
 gem 'capistrano-rails'
 gem 'capistrano-rbenv'
 gem 'active_model_serializers'
+gem 'redis'
 
 group :development, :test do
   gem 'binding_of_caller'
