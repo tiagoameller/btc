@@ -11,7 +11,6 @@ module MyApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.time_zone = 'Madrid'
-    config.middleware.use I18n::JS::Middleware
     config.hosts << /[a-z0-9]+\.ngrok\.io/ unless Rails.env.production?
 
     config.active_storage.replace_on_assign_to_many = false

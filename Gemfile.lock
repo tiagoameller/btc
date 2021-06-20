@@ -41,6 +41,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_model_serializers (0.10.12)
+      actionpack (>= 4.1, < 6.2)
+      activemodel (>= 4.1, < 6.2)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (6.1.3.2)
       activesupport (= 6.1.3.2)
       globalid (>= 0.3.6)
@@ -111,6 +116,8 @@ GEM
     capybara-screenshot (1.0.25)
       capybara (>= 1.0, < 4)
       launchy
+    case_transform (0.2)
+      activesupport
     childprocess (3.0.0)
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
@@ -145,6 +152,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
+    jsonapi-renderer (0.2.2)
     launchy (2.5.0)
       addressable (~> 2.7)
     listen (3.5.1)
@@ -350,6 +358,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
+  active_model_serializers
   amazing_print
   annotate
   apparition

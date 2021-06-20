@@ -7,14 +7,12 @@
 json = JSON.parse(File.read(Rails.root.join('spec', 'fixtures', 'btc.json')))
 
 updated = 1.day.ago
-ExchangeLog.connection.transaction do
-  json.each do |exchange|
-    ExchangeLog.create(
-      updated: updated,
-      usd_rate: exchange.dig('bpi', 'USD', 'rate_float')&.to_f || 0,
-      gbp_rate: exchange.dig('bpi', 'GBP', 'rate_float')&.to_f || 0,
-      eur_rate: exchange.dig('bpi', 'EUR', 'rate_float')&.to_f || 0
-    )
-    updated += 30.seconds
-  end
+json.each do |exchange|
+  ExchangeLog.create(
+    updated: updated,
+    usd_rate: exchange.dig('bpi', 'USD', 'rate_float')&.to_f || 0,
+    gbp_rate: exchange.dig('bpi', 'GBP', 'rate_float')&.to_f || 0,
+    eur_rate: exchange.dig('bpi', 'EUR', 'rate_float')&.to_f || 0
+  )
+  updated += 30.seconds
 end

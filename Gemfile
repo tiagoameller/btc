@@ -38,6 +38,7 @@ gem 'capistrano'
 gem 'capistrano-passenger'
 gem 'capistrano-rails'
 gem 'capistrano-rbenv'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'binding_of_caller'
