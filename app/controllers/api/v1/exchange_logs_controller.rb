@@ -60,7 +60,7 @@ module Api
       rescue ActiveRecord::NotNullViolation
         render json: { error: 'All rate values are required for exchange log. Rejected' }, stauts: 400
       rescue ActiveRecord::RecordNotUnique
-        render json: { error: 'Duplicate timestamp for exchange log. Rejected' }, stauts: 409
+        render json: { error: 'Duplicate timestamp for exchange log. Rejected' }, stauts: :conflict
       end
     end
   end
